@@ -6,7 +6,7 @@ Centos 7
 
 Как это установить?
 
-git clone https://github.com/alexanderfefelov/docker-postgrespro-1c.git
+git clone https://github.com/a4neg/docker-postgrespro-1c.git
 cd docker-postgrespro-1c
 ./build.sh
 ./run.sh
@@ -21,7 +21,7 @@ docker start postgrespro-1c
 docker restart postgrespro-1c
 Какой пароль у администратора?
 
-При первом запуске контейнера пользователю postgress назначается пароль password. Не забудьте поменять его на более надёжный.
+При первом запуске контейнера пользователю postgress назначается пароль 123. Не забудьте поменять его на более надёжный.
 
 Где мои данные?
 
