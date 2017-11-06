@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # docker-postgrespro-1c
 
 ## Что это?
@@ -7,13 +6,13 @@ docker-postgrespro-1c -- это Docker-контейнер PostgreSQL для ис
 
 ## Какая версия?
 Postgresql 9.8.5
-Centos 7
+ubuntu 17.04 Zesty
 
 ## Как это установить?
 
 Для установки и начального запуска выполните команды:
 
-    git clone https://github.com/alexanderfefelov/docker-postgrespro-1c.git
+    git clone https://github.com/a4neg/docker-postgrespro-1c.git
     cd docker-postgrespro-1c
     ./build.sh
     ./run.sh
