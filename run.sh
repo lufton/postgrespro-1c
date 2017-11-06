@@ -1,6 +1,6 @@
 #!/bin/sh
 
-docker run --name postgrespro-1c \
+docker run --name postgrespro-1c --restart always \
   --net host \
   --detach \
   --volume postgrespro-1c-data:/data \
