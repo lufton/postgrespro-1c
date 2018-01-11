@@ -6,4 +6,5 @@ docker run --name postgrespro-1c --restart always \
   --volume postgrespro-1c-data:/data \
   --volume /etc/localtime:/etc/localtime:ro \
   --env POSTGRES_PASSWORD=123 \
-  a4neg/postgrespro-1c
+  --env LC_MESSAGES = "ru_RU.UTF-8" \
+a4neg/postgrespro-1c

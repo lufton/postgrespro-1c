@@ -1,21 +1,26 @@
 FROM ubuntu:zesty
 
 ENV DEBIAN_FRONTEND noninteractive
+#ENV LANG C.UTF-8
+#ENV LC_ALL C.UTF-8
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
 
 RUN groupadd postgres --gid=999 \
   && useradd --gid postgres --uid=999 postgres
 
 ENV GOSU_VERSION 1.7
 RUN apt-get -qq update \
-  && apt-get -qq install --yes --no-install-recommends ca-certificates wget locales \
+  && apt-get -qq install --yes --no-install-recommends ca-certificates wget locales locales-all mc \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && wget --quiet -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
   && chmod +x /usr/local/bin/gosu \
   && gosu nobody true
 
-RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/locale/locale.alias ru_RU.UTF-8
-ENV LANG ru_RU.utf8
+#RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/locale/locale.alias ru_RU.UTF-8
+#ENV LANG ru_RU.UTF-8
+#ENV LC_ALL ru_RU.UTF-8
 
 ENV SERVER_VERSION 9.6
 ENV PATH /usr/lib/postgresql/$SERVER_VERSION/bin:$PATH
