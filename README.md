@@ -2,17 +2,17 @@
 
 ## Что это?
 
-docker-postgrespro-1c -- это Docker-контейнер PostgreSQL для использования с сервером 1С:Предприятия (который, в свою очередь, тоже может работать в [контейнере Docker](https://github.com/lufton/docker-1c-server)). В контейнере используется сборка Postgres Professional, которая содержит патчи, разработанные компанией 1С.
+postgrespro-1c – это Docker-контейнер PostgreSQL для использования с сервером 1С:Предприятия (который, в свою очередь, тоже может работать в [контейнере Docker](https://github.com/lufton/1c-server)). В контейнере используется сборка Postgres Professional, которая содержит патчи, разработанные компанией 1С.
 
 ## Какая версия?
-Postgresql 9.6.5
-ubuntu 17.04 Zesty
+Postgresql 12.2
+debian 9
 
 ## Как это установить?
 
 Для установки и начального запуска выполните команды:
 
-    git clone https://github.com/lufton/docker-postgrespro-1c.git
+    git clone https://github.com/lufton/postgrespro-1c.git
     cd docker-postgrespro-1c
     ./build.sh
     ./run.sh
