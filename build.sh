@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --tag a4neg/postgrespro-1c .
+docker build --tag lufton/postgrespro-1c .

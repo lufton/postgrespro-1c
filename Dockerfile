@@ -22,13 +22,13 @@ RUN apt-get -qq update \
 #ENV LANG ru_RU.UTF-8
 #ENV LC_ALL ru_RU.UTF-8
 
-ENV SERVER_VERSION 9.6
+ENV SERVER_VERSION 12.2
 ENV PATH /usr/lib/postgresql/$SERVER_VERSION/bin:$PATH
 ENV PGDATA /data
-RUN echo deb http://1c.postgrespro.ru/deb/ zesty main > /etc/apt/sources.list.d/postgrespro-1c.list \
+RUN echo deb http://repo.postgrespro.ru/1c-archive/pg1c-12.2/debian stretch main > /etc/apt/sources.list.d/postgrespro-1c.list \
   && wget --quiet -O- http://1c.postgrespro.ru/keys/GPG-KEY-POSTGRESPRO-1C | apt-key add - \
   && apt-get -qq update \
-  && apt-get -qq install --yes postgresql-pro-1c-9.6 \
+  && apt-get -qq install --yes postgresql-pro-1c-$SERVER_VERSION \
   && sed -ri 's/#(create_main_cluster) .*$/\1 = false/' /etc/postgresql-common/createcluster.conf \
   && apt-get -qq install --yes --no-install-recommends postgresql-pro-1c-$SERVER_VERSION \
   && apt-get clean \
